@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!-- https://myfirstpage-weijian.c9users.io/ -->
+<html lang="en-us">
+  <head>
+  	<title>Comment Sample</title>
+
+  	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+    <script type="text/javascript" src="bower_components/pouchdb/dist/pouchdb.min.js"></script>
+    <script type="text/javascript" src="bower_components/pouchdb-find/dist/pouchdb.find.min.js"></script>
+
+  	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  	<link rel="import" href="import/materializeCSS.html">
+  	<link rel="stylesheet" href="styles.css" type="text/css" />
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+
+    <script type="text/javascript" src="testdb.js"></script>
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <h2>Comments</h2>
+
+      <div class="row">
+
+        <form class="col s10" name="commentForm">
+          <div class="row">
+            <div class="input-field">
+              <i class="material-icons prefix">account_circle</i>
+              <input id="name" type="text" class="validate">
+              <label for="icon_prefix">Name</label>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="input-field">
+              <i class="material-icons prefix">message</i>
+              <textarea id="message" class="materialize-textarea"></textarea>
+              <label for="textarea1">Message</label>
+            </div>
+          </div>
+
+          <a class="waves-effect waves-light btn" id="formSubmit">Submit</a>
+
+        </form>
+      </div>
+
+        <div class="divider"></div>
+
+        <div class="row">
+          <div>
+            <table id="commentTable"></table>
+          </div>
+        </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,164 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+
+.parallax-container#top {
+  min-height: 460px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+
+.parallax-container#middle {
+  min-height: 200px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+
+.parallax-container#bottom {
+  min-height: 240px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+
+.parallax-container .section {
+    width: 100%;
+}
+
+.header {
+    text-align: center;
+}
+
+span {
+    white-space:nowrap;
+    font-weight: 400;
+    color: black;
+}
+
+.main-nav a {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: red;
+    font-size: 14px;
+    float: right;
+    width: 6em;
+    
+}
+
+li {
+	display: inline-block;
+	list-style-type: none;
+    padding-top: 10px;
+}
+
+.emphasize {
+     text-shadow: 3px 3px 6px #6CBDD4;
+}
+
+#about_sect {
+    padding-top: 10px;
+    background-color: white;
+    width: 100%;
+    min-height: 540px;
+}
+
+#about_sect p {
+    font-size: 16px;
+}
+
+#work_sect {
+    padding-top: 10px;
+    background-color: #333333;
+    min-height: 600px;
+    color: white;
+}
+
+
+#work_sect h5 {
+    color: gray;
+}
+
+#work_sect p{
+    font-size: 14px;
+    color: #aaaaaa;
+}
+
+
+#contact_sect {
+    padding-top: 10px;
+    min-height: 300px;
+}
+
+.footer {
+    background-color: white;
+    font-size: 12px;
+    text-align: right;
+    font-family: 'Julius Sans One', sans-serif;
+    padding-top:10px;
+    padding-bottom:10px;
+    color: black;
+
+}
+
+blockquote {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 50px;
+  padding-left: 15px;
+  border-left: 3px solid #ccc;
+} 
+
+p {
+   font-family: 'Roboto', sans-serif;
+   font-size: 18px;
+}
+
+address {
+   font-family: 'Roboto', sans-serif;
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 400;
+}
+
+address b {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+address a{
+   font-family: 'Roboto', sans-serif;
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 400;
+   text-align: left;
+   color: black;
+}
+
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-flex;
+  float: right;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  cursor: pointer;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+}
+
