@@ -5,6 +5,15 @@
 
 (function(root){
 
+
+    function escapeRegExp(str) {
+        return str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+    }
+
+    function replaceAll(str, find, replace) {
+      return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);
+    }
+
     var initDB = function(){
 
         //for your own database, change "testdb" on the next line to your db name
@@ -46,20 +55,38 @@
             var comment = comments[i];
             var html = 
             `
-                <tr><td>{{name}}</td><td>{{comment}}</td><td>{{attachment}}</td></tr>
+                <tr><td>{{id}}</td><td>{{name}}</td><td>{{comment}}</td><td>{{attachment}}</td></tr>
             `
+
             html = html.replace("{{name}}", comment.name );
-            html = html.replace("{{comment}}", comment.comment)
-            
+            html = html.replace("{{comment}}", comment.comment);
             if( comment._attachments ){
-                html = html.replace("{{attachment}}", '<i class="material-icons prefix">attach_file</i>');
-                
+                var image_filename = Object.keys(comment._attachments)[0];
+                html = html.replace("{{attachment}}", "<img data-comment-id='{{id}}' data-filename='{{filename}}' class='comment_image' id='image_{{id}}'/>");
+                html = html.replace("{{filename}}", image_filename );
             }
             else{
                 html = html.replace("{{attachment}}", "");
             }
+            html = replaceAll(html, "{{id}}", comment._id);
             commentTable.append(html);
         }
+        
+        //
+        // now go and populate the attachment images
+        // all the info needed to get the image is stored in the data- attribute
+        // this gets converted into a dataset map
+        //
+        $(".comment_image").each( function(index, img){
+            var commentId = img.dataset.commentId;
+            var image_filename = img.dataset.filename;            
+            db.getAttachment(commentId, image_filename).then(function (blob) {
+                var url = URL.createObjectURL(blob);
+                img.src = url;
+                img.setAttribute("width", "200px");
+                console.log(img);
+            });   
+        });
 
         return false;
     }
